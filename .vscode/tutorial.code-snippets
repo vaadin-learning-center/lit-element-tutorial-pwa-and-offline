@@ -1,0 +1,56 @@
+{
+  "manifest": {
+    "prefix": "manifest",
+    "body": [
+      "{",
+      "  \"name\": \"Todo App\",",
+      "  \"short_name\": \"Todo\",",
+      "  \"start_url\": \".\",",
+      "  \"display\": \"standalone\",",
+      "  \"background_color\": \"#2A3443\",",
+      "  \"description\": \"LitElement tutorial\",",
+      "  \"theme_color\": \"#2A3443\",",
+      "  \"icons\": [",
+      "    {",
+      "      \"src\": \"./img/icons/icon-192x192.png\",",
+      "      \"sizes\": \"192x192\",",
+      "      \"type\": \"image/png\"",
+      "    },",
+      "    {",
+      "      \"src\": \"./img/icons/icon-512x512.png\",",
+      "      \"sizes\": \"512x512\",",
+      "      \"type\": \"image/png\"",
+      "    }",
+      "  ]",
+      "}"
+    ]
+  },
+  "link:manifest": {
+    "prefix": "link:manifest",
+    "body": "<link rel=\"manifest\" href=\"./manifest.webmanifest\" />"
+  },
+  "workbox": {
+    "prefix": "workbox",
+    "body": [
+      "if ('workbox' in self) {",
+      "  workbox.precaching.precacheAndRoute(self.__precacheManifest || []);",
+      "}"
+    ]
+  },
+  "registerSW": {
+    "prefix": "registerSW",
+    "body": [
+      "async function registerSW() {",
+      "  if ('serviceWorker' in navigator) { ",
+      "    try {",
+      "      await navigator.serviceWorker.register('./sw.js');",
+      "    } catch (e) {",
+      "      console.log('ServiceWorker registration failed. Sorry about that.', e);",
+      "    }",
+      "  } else {",
+      "    console.log('Your browser does not support ServiceWorker.');",
+      "  }",
+      "}"
+    ]
+  }
+}
