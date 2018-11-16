@@ -1,10 +1,11 @@
-import { LitElement, html } from '@polymer/lit-element';
+import { html } from '@polymer/lit-element';
 import { connect } from 'pwa-helpers';
 import { store } from '../redux/store.js';
 import { statsSelector } from '../redux/reducer.js';
 import '@vaadin/vaadin-charts';
+import { BaseView } from './base-view.js';
 
-class StatsView extends connect(store)(LitElement) {
+class StatsView extends connect(store)(BaseView) {
   static get properties() {
     return {
       chartConfig: { type: Object }

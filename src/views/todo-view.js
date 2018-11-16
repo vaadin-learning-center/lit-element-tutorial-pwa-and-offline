@@ -1,4 +1,4 @@
-import { LitElement, html } from '@polymer/lit-element';
+import { html } from '@polymer/lit-element';
 import '@vaadin/vaadin-text-field';
 import '@vaadin/vaadin-button';
 import '@vaadin/vaadin-checkbox';
@@ -16,8 +16,9 @@ import {
   updateFilter,
   clearCompleted
 } from '../redux/actions.js';
+import { BaseView } from './base-view.js';
 
-class TodoView extends connect(store)(LitElement) {
+class TodoView extends connect(store)(BaseView) {
   static get properties() {
     return {
       todos: { type: Array },
@@ -34,23 +35,27 @@ class TodoView extends connect(store)(LitElement) {
   render() {
     return html`
       <style>
-        :host {
+        todo-view {
           display: block;
           max-width: 800px;
           margin: 0 auto;
         }
-        .input-layout {
+
+        todo-view .input-layout {
           width: 100%;
           display: flex;
         }
-        .input-layout vaadin-text-field {
+
+        todo-view .input-layout vaadin-text-field {
           flex: 1;
           margin-right: var(--spacing);
         }
-        .todos-list {
+
+        todo-view .todos-list {
           margin-top: var(--spacing);
         }
-        .visibility-filters {
+
+        todo-view .visibility-filters {
           margin-top: calc(4 * var(--spacing));
         }
       </style>
