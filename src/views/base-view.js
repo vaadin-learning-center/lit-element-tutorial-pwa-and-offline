@@ -1,4 +1,4 @@
-import { LitElement } from '@polymer/lit-element';
+import { LitElement } from 'lit-element';
 export class BaseView extends LitElement {
   createRenderRoot() {
     return this;

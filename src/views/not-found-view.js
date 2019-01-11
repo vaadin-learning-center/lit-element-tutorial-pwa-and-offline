@@ -1,4 +1,4 @@
-import { html } from '@polymer/lit-element';
+import { html } from 'lit-element';
 import { BaseView } from './base-view';
 
 class NotFoundView extends BaseView {
